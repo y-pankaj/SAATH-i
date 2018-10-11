@@ -14,4 +14,7 @@ The reason for loss of life and resources during natural disaster is high due to
 ## Our Solution
 We aim to build a website that would solve the above mentioned problems. Our main aim is to provide better communication between people for different places of world who are willing to help for a cause.For this we have planned to make chat room for every natural calamity that has occured.Here many people can come together to pool resources.Also people with similar goal can come together to effectively cause a change.This would ensure a better co-ordination and communication between such people.
 Also we aim to provide a platform for easy donation of items during calamity by maintaining an inventory of them and providing it to the people via website.
-Photos location and details(if possible) of rescued people will be uploaded in our "missing people" section.
+Photos location and details(if possible) of rescued people will be uploaded in our "missing people" section.This information will be helpful for their family members.
+"Notice board" section for important information and help call would be helpful in saving  lives.This would enable a person in need to be rescued as quickly as possible which would definitely save some lives.
+"Instant help button" would quickly update their location on the website so that rescue personnels can perform rescue operation as soon as possible.
+Also a very important feature will be the calamity perdictor and mass messaging system. This would get timely warning to the related people and would give them ample time to get prepared for the disaster. This would help in reducing the economic and life loss.  
