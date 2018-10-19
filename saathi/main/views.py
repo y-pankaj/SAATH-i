@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from django.views import generic
-from django.views.generic import View
-# Create your views here.
+from main.models import Disasters
+
 
 def HomePageView(request):
     template_name = 'index.html'
-    return render(request, template_name)
+    context = { 'disasters' : Disasters.objects.all() }
+    return render(request, template_name, context)
 
 def AboutView(request):
     template_name = 'about.html'
