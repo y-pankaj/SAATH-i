@@ -51,4 +51,12 @@
     </div>
 
     <hr>
+
+    <h1>New post</h1>
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.sender }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+
 {% endblock %}
