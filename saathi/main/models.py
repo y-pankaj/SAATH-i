@@ -11,3 +11,7 @@ class Disasters(models.Model):
 class Feedback_form(models.Model):
     sender = models.EmailField()
     message = models.CharField(max_length=150)
+class Prediction(models.Model):
+    title = models.CharField(max_length=30, blank=False)
+    body = models.CharField(max_length=100, blank=False)
+    link = models.CharField(max_length=100, blank=True)

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from main.models import Disasters
+from main.models import Disasters,Prediction
 from .forms import Feedback
 from django.conf import settings
 from django.contrib import messages
@@ -28,7 +28,7 @@ def ContactView(request):
             # ........Sending the email.......
             subject = 'Your response'
             from_email = settings.EMAIL_HOST_USER
-            message = 'We have received your query'  # TODO update feedback message to user
+            message = 'Thank You for giving us your valuable suggestion.'  # TODO update feedback message to user
             to_list = [sender]
             send_mail(subject, message, from_email, to_list, fail_silently=False)
 
@@ -47,4 +47,6 @@ def ContactView(request):
 
 def PredictionsView(request):
     template_name = 'predictions.html'
-    return render(request, template_name)
+    context = {'prediction':Prediction.objects.all()}
+    return render(request, template_name,context)
+
