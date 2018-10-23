@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kerala Floods</title>
+</head>
+<body>
+{% if KF_data %}
+    {% for data in KF_data %}
+        <h1>{{ data.contact }}</h1>
+        {{ data.address }}
+    {% endfor %}
+{% endif %}
+</body>
+</html>
