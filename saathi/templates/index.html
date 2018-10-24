@@ -36,13 +36,11 @@ h1 {
     <div class="container">
       <div class="row">
           <div class="row">
-          {% if disasters %}
-            {% for disaster in disasters %}
         <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-preview">
             <a href="{% url 'chat:kerala_floods' %}">
               <h2 class="post-title">
-                {{ disaster.title }}
+                Kerala Floods
               </h2>
               <h3 class="post-subtitle">
                 Link to Chat Room
@@ -53,8 +51,51 @@ h1 {
 
           <!-- Pager -->
         </div>
-          {% endfor %}
-        {% endif %}
+        <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-preview">
+            <a href="{% url 'chat:hurricane_michael' %}">
+              <h2 class="post-title">
+                Hurricane Michael
+              </h2>
+              <h3 class="post-subtitle">
+                Link to Chat Room
+              </h3>
+          </div>
+          <hr>
+
+
+          <!-- Pager -->
+        </div>
+        <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-preview">
+            <a href="{% url 'chat:cyclone_titli' %}">
+              <h2 class="post-title">
+                Cyclone Titli
+              </h2>
+              <h3 class="post-subtitle">
+                Link to Chat Room
+              </h3>
+          </div>
+          <hr>
+
+
+          <!-- Pager -->
+        </div>
+        <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-preview">
+            <a href="{% url 'chat:indonesian_tsunami' %}">
+              <h2 class="post-title">
+                Indonesia Tsunami
+              </h2>
+              <h3 class="post-subtitle">
+                Link to Chat Room
+              </h3>
+          </div>
+          <hr>
+
+
+          <!-- Pager -->
+        </div>
           </div>
       </div>
     </div>
