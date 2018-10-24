@@ -10,7 +10,7 @@ def KeralaFloods(request):
 
 def HurricaneMichael(request):
     template_name = 'hurricane_michael.html'
-    HM = PersonFound.objects.filter(disaster='Hurricane Michael')
+    HM = PersonFound.objects.filter(disaster='HM')
     context = {'HM_data': HM}
     return render(request, template_name, context)
 

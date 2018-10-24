@@ -1,0 +1,11 @@
+
+
+{% block content %}
+    <h1>How are you</h1>
+    {% if HM_data %}
+        {% for data in HM_data %}
+            <h1>{{ data.contact }}</h1>
+            {{ data.address }}
+        {% endfor %}
+    {% endif %}
+{% endblock %}
