@@ -20,33 +20,33 @@
         </div>
       </div>
     </header>
-
+<div align="center">
+    <font size="7" color="red" face="Courier">CHAT ROOMS</font>
+</div>
     <!-- Main Content -->
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-
-        {% if disasters %}
+          <div class="row">
+          {% if disasters %}
             {% for disaster in disasters %}
+        <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-preview">
             <a href="{{ disaster.link }}">
               <h2 class="post-title">
                 {{ disaster.title }}
               </h2>
               <h3 class="post-subtitle">
-                {{ disaster.body }}
+                Link to Chat Room
               </h3>
-            </a>
-            <p class="post-meta">Posted by
-              <a href="#">{{ disaster.author }}</a>
-              on {{ disaster.date_published }}</p>
           </div>
           <hr>
-            {% endfor %}
-        {% endif %}
+
 
           <!-- Pager -->
         </div>
+          {% endfor %}
+        {% endif %}
+          </div>
       </div>
     </div>
 

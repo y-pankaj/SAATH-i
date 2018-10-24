@@ -5,7 +5,8 @@ def Kerala_FloodsView(request):
     return render(request, template_name)
 
 def Indonesian_TsunamiView(request):
-    template_name = 'disasters/indonesian_tsumani.html'
+    template_name = 'disasters/indonesian_tsunam' \
+                    'i.html'
     return render(request, template_name)
 
 def Cyclone_TitliView(request):

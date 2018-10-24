@@ -4,6 +4,12 @@
 {% endblock %}
 
 {% block content %}
+<style>
+     div #bhai {
+    color: lightblue;
+}
+
+</style>
     <!-- Page Header -->
     <header class="masthead" style="background-image: url('../static/img/people.jpeg')">
       <div class="overlay"></div>
@@ -18,12 +24,14 @@
         </div>
       </div>
     </header>
-
+<div class="bhai" align="center">
     <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Upload</button>
   </form>
+</div>
+<div align="center">
 
-
+</div>>
 {% endblock %}

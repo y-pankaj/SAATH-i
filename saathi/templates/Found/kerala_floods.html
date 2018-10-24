@@ -1,0 +1,53 @@
+{% extends 'layout.html'%}
+
+{% block head %}
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% endblock %}
+
+{% block content %}
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('/static/img/disasters/hurricane_michael3.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>Rescued</h1>
+              <span class="subheading">During rescue operation in Kerala</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="row">
+            {% if HM_data %}
+            {% for data in HM_data %}
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                       data-image="https://images.pexels.com/photos/853168/pexels-photo-853168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                       data-target="#image-gallery">
+                        <p><img class="img-thumbnail"
+                             src="{{ data.photo.url }}"
+                             alt="Another alt text" align="middle">Address:{{data.address}}<br>
+                             {% if data.contact %}
+                                Contact:{{data.contact}}
+                             {%endif%}</p>
+                    </a>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+<script src="/static/js/found.js"></script>
+{% endblock %}
