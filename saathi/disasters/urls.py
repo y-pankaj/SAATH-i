@@ -1,6 +1,8 @@
 from django.urls import include, path
 from . import views
 
+app_name='chat'
+
 urlpatterns = [
     path('kerala_floods/', views.Kerala_FloodsView, name='kerala_floods'),
     path('cyclone_titli/', views.Cyclone_TitliView, name='cyclone_titli'),

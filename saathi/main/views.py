@@ -11,32 +11,8 @@ def HomePageView(request):
     return render(request, template_name, context)
 
 def AboutView(request):
-    if request.method == 'POST':
-        form = Feedback(request.POST)
-        if form.is_valid():
-            sender = form.cleaned_data['sender']
-            f_message = form.cleaned_data['message']
-            post = form.save(commit=False)
-
-            # ........Sending the email.......
-            subject = 'Your response'
-            from_email = settings.EMAIL_HOST_USER
-            message = 'Thank You for giving us your valuable suggestion.'  # TODO update feedback message to user
-            to_list = [sender]
-            send_mail(subject, message, from_email, to_list, fail_silently=False)
-
-            subject = 'Feedback from {}'.format(sender)
-            from_email = settings.EMAIL_HOST_USER
-            message = f_message  # TODO update feedback message to user
-            to_list = [settings.EMAIL_HOST_USER]
-            send_mail(subject, message, from_email, to_list, fail_silently=False)
-
-            return redirect('contact')
-    else:
-        form = Feedback()
-        template_name = 'about.html'
-
-    return render(request, template_name, {'form': form})
+    template_name = 'about.html'
+    return render(request, template_name)
 
 
 def ContactView(request):
@@ -72,7 +48,7 @@ def PredictionsView(request):
     context = {'prediction':Prediction.objects.all()}
     return render(request, template_name,context)
 
-def FoundView(request):
+def FoundView(request): # TODO Complete the found.html page Write some thing at the top. And include link of the disasters
     if request.method == 'POST':
         form = Found(request.POST, request.FILES)
         if form.is_valid():
@@ -81,4 +57,4 @@ def FoundView(request):
     else:
         form = Found()
         template_name = 'found.html'
-    return render(request, template_name, {'form':form}) # TODO should the found page be based on about or predeictions page
+    return render(request, template_name, {'form':form})

@@ -4,6 +4,15 @@
 {% endblock %}
 
 {% block content %}
+
+<style>
+h1 {
+  font-weight: bold;
+  color: #FFDC00;
+  font-size: 110px;
+}
+</style>
+
     <!-- Page Header -->
     <header class="masthead" style="background-image: url('../static/img/home-bg.jpeg')">
       <div class="overlay"></div>
@@ -21,7 +30,7 @@
       </div>
     </header>
 <div align="center">
-    <font size="7" color="red" face="Courier">CHAT ROOMS</font>
+    <h1>CHAT ROOMS</h1>
 </div>
     <!-- Main Content -->
     <div class="container">
@@ -31,7 +40,7 @@
             {% for disaster in disasters %}
         <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-preview">
-            <a href="{{ disaster.link }}">
+            <a href="{% url 'chat:kerala_floods' %}">
               <h2 class="post-title">
                 {{ disaster.title }}
               </h2>
