@@ -17,7 +17,11 @@ def HomePageView(request):
             url = 'https://atlas.microsoft.com/search/address/reverse/json?subscription-key='+key+'&api-version=1.0&query='+lat+','+lon+''
             response = requests.get(url)
             json = response.json()
-            text = str(json['addresses'][0]['address'])
+            text='Latitude:' + lat + '\nLongitude:' + lon + '\nAddress:\n'
+            text =text+str(json['addresses'][0]['address'])
+
+            #content = 'Latitude:' + lat + '\nLongitude:' + lon + '\nAddress:\n'
+            #content = content + text['streetName'] + ',' + text['municipalitySubdivision'] + ',' + text['municipality'] + ',' + text['country'] + '-' + text['postalCode']
 
             #...........SEND MAIL............
             subject = 'Distress Signal'

@@ -28,6 +28,12 @@ function showPosition(position) {
 
 
 </script>
+
+
+<link href="/static/css/base.css" rel="stylesheet">
+<link href="/static/css/buttons.css" rel="stylesheet">
+<link href="/static/css/normalize.css" rel="stylesheet">
+<link href="/static/css/vicons-font.css" rel="stylesheet">
 {% endblock %}
 
 
@@ -50,7 +56,9 @@ h1 {
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
                 <div class="box bg-4">
-					<button >Try It</button>
+                    <div class="box bg-1">
+                        <button class="button button--moema button--text-thick button--text-upper button--size-s" onclick = "getLocation();" value="Get Location">Add to cart</button>
+                    </div>
 				</div>
               <span class="subheading">Press the help button if you are stuck in a disaster</span>
             </div>
@@ -60,10 +68,6 @@ h1 {
       </div>
     </header>
 
-<form>
-    {% csrf_token %}
-    <input type = "button" onclick = "getLocation();" value = "Get Location"/>
-</form>
 
 
 
