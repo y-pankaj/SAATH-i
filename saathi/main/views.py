@@ -1,14 +1,33 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from main.models import Disasters, Prediction
 from .forms import Feedback, Found
 from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
+from django.views.decorators.csrf import csrf_exempt
+import requests
 
+@csrf_exempt
 def HomePageView(request):
+    if request.method == 'POST':
+        if 'latitude' in request.POST:
+            lat = request.POST['latitude']
+            lon = request.POST['longitude']
+            key = 'yivWcEFmJWKFvIteu_8LluM1uZgauY8oLecRRsYBqFg'
+            url = 'https://atlas.microsoft.com/search/address/reverse/json?subscription-key='+key+'&api-version=1.0&query='+lat+','+lon+''
+            response = requests.get(url)
+            json = response.json()
+            text = str(json['addresses'][0]['address'])
+
+            #...........SEND MAIL............
+            subject = 'Distress Signal'
+            from_email = settings.EMAIL_HOST_USER
+            message = text  # TODO update feedback message to user
+            to_list = ['pankaj2000.fideri@gmail.com']
+            send_mail(subject, message, from_email, to_list, fail_silently=False)
+            return HttpResponse('success')  # if everything is OK
     template_name = 'index.html'
-    context = {'disasters': Disasters.objects.all()}
-    return render(request, template_name, context)
+    return render(request, template_name)
 
 def AboutView(request):
     template_name = 'about.html'

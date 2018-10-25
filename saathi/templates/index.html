@@ -3,6 +3,34 @@
     Home
 {% endblock %}
 
+{% block head %}
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    window.console.log(position.coords.latitude, position.coords.longitude);
+    var URL = "{% url 'main:home' %}";
+    var data = {'latitude': position.coords.latitude, 'longitude':position.coords.longitude};
+    $.post(URL, data, function(response){
+        if(response === 'success'){ alert('Help is on the way'); }
+        else{ alert('Error! :('); }
+    });
+}
+
+
+
+</script>
+{% endblock %}
+
+
 {% block content %}
 
 <style>
@@ -13,6 +41,7 @@ h1 {
 }
 </style>
 
+
     <!-- Page Header -->
     <header class="masthead" style="background-image: url('../static/img/home-bg.jpeg')">
       <div class="overlay"></div>
@@ -21,14 +50,23 @@ h1 {
           <div class="col-lg-8 col-md-10 mx-auto">
             <div class="site-heading">
                 <div class="box bg-4">
-					<button class="button button--moema button--border-thick button--size-l">HELP</button>
+					<button >Try It</button>
 				</div>
-              <span class="subheading">A red help button</span>
+              <span class="subheading">Press the help button if you are stuck in a disaster</span>
             </div>
           </div>
+          <p id="demo"></p>
         </div>
       </div>
     </header>
+
+<form>
+    {% csrf_token %}
+    <input type = "button" onclick = "getLocation();" value = "Get Location"/>
+</form>
+
+
+
 <div align="center">
     <h1>CHAT ROOMS</h1>
 </div>
