@@ -59,7 +59,7 @@ def ContactView(request):
             to_list = [settings.EMAIL_HOST_USER]
             send_mail(subject, message, from_email, to_list, fail_silently=False)
 
-            return redirect('contact')
+            return redirect('main:contact')
     else:
         form = Feedback()
         template_name = 'contact.html'
