@@ -3,13 +3,16 @@
     Prediction
 {% endblock %}
 
+
 {% block content %}
 <style>
-     div #bhai {
-    color: lightblue;
+h1 {
+  font-weight: bold;
+  color: #FFDC00;
+  font-size: 50px;
 }
-
 </style>
+
     <!-- Page Header -->
     <header class="masthead" style="background-image: url('../static/img/people.jpeg')">
       <div class="overlay"></div>
@@ -24,6 +27,15 @@
         </div>
       </div>
     </header>
+<div class="col-lg-1 col-md-10 mx-auto">
+    <h1>FORM</h1>
+    <br>
+
+</div>
+<div align="center">
+    <h2>If any missing person is found then fill this form</h2>
+
+</div>
 <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -34,6 +46,97 @@
           </form>
         </div>
       </div>
+</div>
+<br>
+<br>
+<br>
+<div class="col-lg-6 col-md-15 mx-auto" >
+    <h1>LINKS TO LIST OF PEOPLE RESCUED</h1>
+</div>
+<br>
+
+
+
+
+
+
+<div>
+
+</div>
+<div class="container">
+      <div class="row">
+          <div class="row">
+        <div class="col-lg-6 col-md-10 mx-auto">
+                <div class="post-preview">
+            <a href="{% url 'found:kerala_floods' %}">
+              <h2 class="post-title">
+                Kerala Floods
+              </h2>
+              <h3 class="post-subtitle">
+                Link to list of people rescued
+              </h3>
+          </div>
+          <hr>
+
+
+          <!-- Pager -->
+        </div>
+        <div class="col-lg-6 col-md-10 mx-auto">
+                <div class="post-preview">
+            <a href="{% url 'found:hurricane_michael' %}">
+              <h2 class="post-title">
+                Hurricane Michael
+              </h2>
+              <h3 class="post-subtitle">
+                Link to list of people rescued
+              </h3>
+          </div>
+          <hr>
+
+
+          <!-- Pager -->
+        </div>
+        <div class="col-lg-6 col-md-10 mx-auto">
+                <div class="post-preview">
+            <a href="{% url 'found:cyclone_titli' %}">
+              <h2 class="post-title">
+                Cyclone Titli
+              </h2>
+              <h3 class="post-subtitle">
+                Link to list of people rescued
+              </h3>
+          </div>
+          <hr>
+
+
+          <!-- Pager -->
+        </div>
+        <div class="col-lg-6 col-md-10 mx-auto">
+                <div class="post-preview">
+            <a href="{% url 'found:indonesian_tsunami' %}">
+              <h2 class="post-title">
+                Indonesia Tsunami
+              </h2>
+              <h3 class="post-subtitle">
+                Link to list of people rescued
+              </h3>
+          </div>
+          <hr>
+
+
+          <!-- Pager -->
+        </div>
+          </div>
+      </div>
+    </div>
+
+    <hr>
+<div>
+
+</div>
+<div>
+
+
 </div>
 
 <div align="center">
