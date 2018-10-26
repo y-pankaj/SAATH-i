@@ -21,7 +21,7 @@ def CycloneTitli(request):
     return render(request, template_name, context)
 
 def IndonesianTsunami(request):
-    template_name = 'Found/indonesian_floods.html'
+    template_name = 'Found/indonesian_tsunami.html'
     HM = PersonFound.objects.filter(disaster='IT')
     context = {'HM_data': HM}
     return render(request, template_name, context)

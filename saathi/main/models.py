@@ -20,7 +20,7 @@ class Prediction(models.Model):
 class PersonFound(models.Model):
     my_choices = (
         ("KL","Kerala Floods"),
-        ("HM","Hurrincane Micheal"),
+        ("HM","Hurrincane Michael"),
         ("CT","Cyclone Titli"),
         ("IT","Indonesian Tsunami"),
     )

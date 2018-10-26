@@ -4,43 +4,74 @@
 {% endblock %}
 
 {% block content %}
+<style>
+h1 {
+  font-weight: bold;
+  color: #FF4136 ;
+  font-size: 50px;
+}
+</style>
+
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('../static/img/prediction.jpeg')">
+
+       <header class="masthead" style="background-image: url('../static/img/volcano.jpg')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="post-heading">
-              <h1>PREDICTIONS</h1>
-              <h2 class="subheading">Our predictions for disasters based on previous year statistics</h2>
+            <div class="page-heading">
+              <h1>Prediction</h1>
+              <span class="subheading">Our predictions for disasters based on previous year statistics and other sources</span>
             </div>
           </div>
         </div>
       </div>
     </header>
-
     <!-- Main Content -->
-    <div class="container">
+
+<div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-
-        {% if prediction %}
-            {% for predictions in prediction %}
-                <div class="post-preview">
-            <a href="{{ predictions.link }}">
+          <div class="post-preview">
               <h2 class="post-title">
-                {{ predictions.title }}
+                Flood alert for Assam and Arunachal Pradesh
               </h2>
-              <h3 class="post-subtitle">
-                {{ predictions.body }}
-              </h3>
-            </a>
+              <p class="post-subtitle">
+              Assam and Arunachal Pradesh are on high alert after China informed India about a possible flood situation because of a landslide in Tibet.
+              </p>
+            <p class="post-meta">Posted
+              on October 26, 2018</p>
           </div>
           <hr>
-            {% endfor %}
-        {% endif %}
+
+          <div class="post-preview">
+
+              <h2 class="post-title">
+                Volcanic Eruption
+              </h2>
+              <p class="post-subtitle">
+                Kirishima, is a group of several volcanic cones located in Japan. It has shown increased activity over the last week. It is expected erupt in the coming month.
+              </p>
+
+            <p class="post-meta">Posted
+              on October 10, 2018</p>
+          </div>
+          <hr>
+          <div class="post-preview">
+
+              <h2 class="post-title">
+                California Wildfire
+              </h2>
+              <p class="post-subtitle">
+                Last year California has largest wildfires till date. It is expected that this is year too wildfires will start from December end.
+              </p>
+
+            <p class="post-meta">Posted
+              on August 24, 2018</p>
+          </div>
 
           <!-- Pager -->
+          </div>
         </div>
       </div>
     </div>
