@@ -5,6 +5,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponseRedirect
 import requests
 
 @csrf_exempt
@@ -47,9 +48,9 @@ def ContactView(request):
             post = form.save(commit=False)
 
             # ........Sending the email.......
-            subject = 'Your response'
+            subject = 'Your Feedback'
             from_email = settings.EMAIL_HOST_USER
-            message = 'Thank You for giving us your valuable suggestion.'  # TODO update feedback message to user
+            message = 'Thank You for giving us your valuable suggestion/feedback.'  # TODO update feedback message to user
             to_list = [sender]
             send_mail(subject, message, from_email, to_list, fail_silently=False)
 
@@ -59,7 +60,7 @@ def ContactView(request):
             to_list = [settings.EMAIL_HOST_USER]
             send_mail(subject, message, from_email, to_list, fail_silently=False)
 
-            return redirect('main:contact')
+            return redirect('main:success')
     else:
         form = Feedback()
         template_name = 'contact.html'
@@ -76,8 +77,12 @@ def FoundView(request): # TODO Complete the found.html page Write some thing at 
         form = Found(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('main:home')
+            return HttpResponseRedirect('/')
     else:
         form = Found()
         template_name = 'found.html'
     return render(request, template_name, {'form':form})
+
+def Success(request):
+    template_name = 'success.html'
+    return render(request, template_name)

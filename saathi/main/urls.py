@@ -12,6 +12,7 @@ urlpatterns = [
     path('contact/', views.ContactView, name='contact'),
     path('predictions/', views.PredictionsView, name='predictions'),
     path('found/', views.FoundView, name='found'),
+    path('success/', views.Success, name='success')
 ]
 
 urlpatterns += staticfiles_urlpatterns()
