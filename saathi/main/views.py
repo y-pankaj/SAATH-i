@@ -77,7 +77,7 @@ def FoundView(request): # TODO Complete the found.html page Write some thing at 
         form = Found(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('main:found')
+            return redirect('main:home')
     else:
         form = Found()
         template_name = 'found.html'
